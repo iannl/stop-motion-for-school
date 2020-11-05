@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Search Stop-Motion</title>
+</head>
+
+<body id="body">
+    <style>
+        button {
+            box-shadow: inset;
+            width: 78px;
+            /*height: 100px;*/
+            background-color: aqua;
+            /*outline: rgb(255, 0, 0);
+            outline-style: double;*/
+            color: brown;
+            text-decoration: lightcoral;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-width: 0px;
+            text-align: center;
+        }
+        
+        textarea {
+            box-shadow: inset;
+            width: 74px;
+            height: 10px;
+            background-color: #a9faf6;
+            /*outline: rgb(255, 0, 0);
+            outline-style: double;*/
+            text-decoration: lightcoral;
+            color: black;
+            resize: none;
+            margin-bottom: -10px;
+            font-size: 7px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-width: 0px;
+            text-align: center;
+        }
+        
+        textarea:focus,
+        input:focus {
+            outline: none;
+        }
+        
+        button:active {
+            color: red;
+            background-color: teal;
+            text-align: center;
+        }
+        
+        #search {
+            zoom: 2;
+            moz-transform: scale(2);
+        }
+        
+        #top {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            background-color: yellow;
+            padding: 5px;
+        }
+        
+        html {
+            background-color: teal;
+        }
+        
+        #test {
+            size: 100px;
+            font-size: 5px;
+        }
+    </style>
+
+    <div id="top">
+        <div id="search">
+            <form>
+                <select name="1" id="1" onchange="search()">
+                    <option value="none" selected disabled hidden> 
+                        Select an Option 
+            <option value="Animal Chase">Animal Chase</option>
+            <option value="Clouds Moving">Clouds Moving</option>
+            <option value="Fireworks">Fireworks</option>
+            <option value="Floating Car">Floating Car</option>
+            <option value="Hot Pursuit">Hot Pursuit</option>
+            <option value="Lego Blocks">Lego Blocks</option>
+            <option value="Legomen">Legomen</option>
+            <option value="Levitation">Levitation</option>
+            <option value="Moving Pebbles">Moving Pebbles</option>
+            <option value="Talking Chair">Talking Chair</option>
+            <option value="The Hand">The Hand</option>
+                </select>
+                <!--<b>/</b>-->
+                <select name="2" id="2" onchange="search()">
+                    <option value="none" selected disabled hidden> 
+                        Select an Option 
+                <option value="0">Trailer</option>
+                <option value="1">Part One</option>
+                <option value="2">Part Two</option>
+                <option value="3">Part Three</option>
+                <!--<option value="4" disabled hidden>Part Four</option>
+                <option value="5" disabled hidden>Part Five</option>-->
+              </select>
+            </form>
+        </div>
+
+        <div id="div"></div>
+
+        <script>
+            function search() {
+                var search = document.getElementById("1").value + "/" + document.getElementById("2").value
+                console.log(search)
+                var FileLocation = "Stop-Motion-Videos/" + search + "/video-1.mov"
+                console.log(FileLocation)
+
+                document.getElementById("div").innerHTML = '<b style="position: fixed; margin-top: 150px; margin-left: 250px; font-size: 5px; ">File not found. Try somethig else.</b>'
+                document.getElementById("div").innerHTML += '<video width="640" height="480" style="position: fixed; margin-top:50px;" controls><source src="' + FileLocation + '" />Your device does not support video</video>'
+
+
+
+
+            }
+        </script>
+        <!--<form action="action_page.php">
+            <input id="myInput" type="text" name="myCountry" placeholder="Country">
+            <input type="submit">
+        </form>-->
+</body>
+
+</html>

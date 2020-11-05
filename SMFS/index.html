@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Search Stop-Motion</title>
+</head>
+
+<body id="body">
+    <style>
+        button {
+            box-shadow: inset;
+            width: 78px;
+            /*height: 100px;*/
+            background-color: aqua;
+            /*outline: rgb(255, 0, 0);
+            outline-style: double;*/
+            color: brown;
+            text-decoration: lightcoral;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-width: 0px;
+            text-align: center;
+        }
+        
+        textarea {
+            box-shadow: inset;
+            width: 74px;
+            height: 10px;
+            background-color: #a9faf6;
+            /*outline: rgb(255, 0, 0);
+            outline-style: double;*/
+            text-decoration: lightcoral;
+            color: black;
+            resize: none;
+            margin-bottom: -10px;
+            font-size: 7px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-width: 0px;
+            text-align: center;
+        }
+        
+        textarea:focus,
+        input:focus {
+            outline: none;
+        }
+        
+        button:active {
+            color: red;
+            background-color: teal;
+            text-align: center;
+        }
+        
+        #search {
+            zoom: 2;
+            moz-transform: scale(2);
+        }
+        
+        #top {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            background-color: yellow;
+            padding: 5px;
+        }
+        
+        html {
+            background-color: teal;
+        }
+    </style>
+    <div id="top">
+        <div id="search"><textarea id="text" placeholder="Search Here..." maxlength="17"></textarea>
+            <br>
+            <button onclick="search()">Search</button></div>
+    </div>
+    <div id="div"></div>
+
+    <script>
+        function search() {
+            var search = document.getElementById("text").value
+            console.log(search)
+            var FileLocation = "Stop-Motion-Videos/" + search + "/video-1.mov"
+            console.log(FileLocation)
+
+            document.getElementById("div").innerHTML = '<b style="position: fixed; margin-top: 75px; margin-left: 50px;">File not found. Try somethig else.</b>'
+            document.getElementById("div").innerHTML += '<video width="320" height="240" style="position: fixed;" controls><source src="' + FileLocation + '" />Your device does not support video</video>'
+
+
+
+
+        }
+    </script>
+</body>
+
+</html>
