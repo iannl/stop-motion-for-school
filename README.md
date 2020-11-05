@@ -1,2 +1,2 @@
 # stop-motion-for-school
-Stop-motion library. School friendly.
+I made a Stop-motion library that is School friendly.
